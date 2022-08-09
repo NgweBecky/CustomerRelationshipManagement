@@ -1,0 +1,88 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer Relationship Management</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="~/css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        @if (User.Identity.IsAuthenticated)
+        {
+            @if (User.IsInRole("Manager") || User.IsInRole("Employee"))
+            {
+                <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3 sticky-top">
+                    <div class="container">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                            <ul class="navbar-nav flex-grow-1 m-auto">
+
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    @if (User.IsInRole("Manager") || User.IsInRole("Employee"))
+                                    {
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                                        </li>
+                                    }
+                                    @if (User.IsInRole("Manager"))
+                                    {
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" asp-area="" asp-controller="Administration" asp-action="Index">Customers</a>
+                                        </li>
+
+                                    }
+                                    @if (User.IsInRole("Manager") || User.IsInRole("Employee"))
+                                    {
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" asp-area="" asp-controller="Employee" asp-action="Index">Customer Calls</a>
+                                        </li>
+                                    }@if (User.IsInRole("Manager"))
+                                    {
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" asp-area="" asp-controller="Report" asp-action="Index">Customer Report</a>
+                                        </li>
+
+                                    }
+
+                                }
+
+                            </ul>
+                            @if (User.IsInRole("Manager") || User.IsInRole("Employee"))
+                            {
+                                <a class="btn btn-brand ms-lg-3 text-dark m-auto" id="logout" asp-area="" asp-controller="Account" asp-action="Logout">Logout</a>
+                            }
+                        </div>
+                    </div>
+                </nav>
+            }
+        }
+    </header>
+    @RenderBody()
+
+    <footer class="border-top footer text-muted">
+        @if (User.Identity.IsAuthenticated)
+        {
+            @if (User.IsInRole("Manager") || User.IsInRole("Employee"))
+            {
+                <div class="container">
+                    <p>Copyright &copy;2022 - All rights Reserved</p>
+                </div>
+            }
+        }
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/owl.carousel.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

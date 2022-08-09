@@ -1,0 +1,80 @@
+﻿@model IEnumerable<CustomerRelationshipManagement.UI.Models.DBContext.Customer>
+
+@{
+    ViewData["Title"] = "Index";
+    Pager pager = new Pager();
+
+    int pageNo = 0;
+
+    if (ViewBag.Pager != null)
+    {
+        pager = ViewBag.Pager;
+        pageNo = pager.CurrentPage;
+    }
+}
+
+<div class="container">
+
+    <p>
+        <a asp-action="ManageCustomerCreate" class="btn btn-sm btn-success ml-1">Create New</a>
+    </p>
+    <partial name="_pager" model="@pager" />
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CustomerName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CustomerSurname)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Address)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PostCode)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Country)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DateOfBirth)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CustomerName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CustomerSurname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Address)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PostCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Country)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateOfBirth)
+                    </td>
+                    <td>
+                        <a asp-action="ManageCustomerEdit" asp-route-id="@item.CustomerNo" class="btn btn-sm btn-info">Edit</a> |
+                        <a asp-action="ManageCustomerDetails" asp-route-id="@item.CustomerNo" class="btn btn-sm btn-primary ml-1">Details</a> |
+                        <a asp-action="ManageCustomerDelete" asp-route-id="@item.CustomerNo" class="btn btn-sm btn-danger ml-1">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <partial name="_pager" model="@pager" />
+
+</div>

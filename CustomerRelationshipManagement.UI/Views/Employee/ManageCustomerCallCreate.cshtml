@@ -1,0 +1,51 @@
+﻿@model CustomerRelationshipManagement.UI.Models.DBContext.CallByName
+
+@{
+    ViewData["Title"] = "ManageCustomerCallCreate";
+}
+
+<h1>ManageCustomerCallCreate</h1>
+
+<h4>CallByName</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="ManageCustomerCallCreate">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CustomerName" class="control-label"></label>
+                <input asp-for="CustomerName" class="form-control" />
+                <span asp-validation-for="CustomerName" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="DateOfCall" class="control-label"></label>
+                <input asp-for="DateOfCall" class="form-control" />
+                <span asp-validation-for="DateOfCall" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TimeOfCall" class="control-label"></label>
+                <input asp-for="TimeOfCall" class="form-control" />
+                <span asp-validation-for="TimeOfCall" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Subject" class="control-label"></label>
+                <input asp-for="Subject" class="form-control" />
+                <span asp-validation-for="Subject" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

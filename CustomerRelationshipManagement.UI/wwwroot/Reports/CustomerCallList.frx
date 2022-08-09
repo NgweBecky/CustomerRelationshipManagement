@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="07/28/2022 05:46:15" ReportInfo.Modified="07/28/2022 07:08:18" ReportInfo.CreatorVersion="1.0.0.0">
+  <Styles Name="Blue">
+    <Style Name="Title" Font="Arial, 12pt, style=Bold"/>
+    <Style Name="Header" Fill.Color="LightSkyBlue" Font="Arial, 10pt, style=Bold"/>
+    <Style Name="Group" Font="Arial, 10pt, style=Bold"/>
+    <Style Name="Data" Font="Arial, 10pt"/>
+    <Style Name="Footer" Fill.Color="LightSkyBlue" Font="Arial, 10pt"/>
+    <Style Name="EvenRows" Fill.Color="AliceBlue" Font="Arial, 10pt"/>
+  </Styles>
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlqM7gJFg/iaLrqMhRfGy5lGnjtmxkCjrpsh9v7OjTYSWsnh9C8gcXEhl5T9c7A3pSlxwxo7YpQQ/nVYOR552NvIDwSCRD7JXfPRZo/LEj/pJSfxTlool0/u2I/zhZak2aS4X0INhGO9SLyd1g0kPBVH1SQ9lXFelnx7S+b03K3RPpXyFdXD6FvnF61GLIFfFm8rHuDVr2ABnAirBRmRen36v64iuOdZLpiLNlCxRPVR0A=">
+      <TableDataSource Name="CustomerCall" DataType="System.Int32" Enabled="true" TableName="CustomerCall" SelectCommand="EXEC spCustomerCallList @id">
+        <Column Name="CustomerCall_id" DataType="System.Int32"/>
+        <Column Name="CustomerNo" DataType="System.Int32"/>
+        <Column Name="DateOfCall" DataType="System.DateTime"/>
+        <Column Name="TimeOfCall" DataType="System.DateTime"/>
+        <Column Name="Subject" DataType="System.String"/>
+        <Column Name="Description" DataType="System.String"/>
+        <Column Name="CustomerName" DataType="System.String"/>
+        <CommandParameter Name="id" DataType="22" Expression="[id]"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+    <Parameter Name="id" DataType="System.String"/>
+    <Parameter Name="CONN" DataType="System.String"/>
+    <Parameter Name="CustomerName" DataType="System.String"/>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="37.8">
+      <TextObject Name="Text1" Width="718.2" Height="37.8" Dock="Fill" Text="CustomerCall" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold" Style="Title"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="41.8" Width="718.2" Height="28.35">
+      <TextObject Name="Text3" Width="113.4" Height="28.35" Fill.Color="LightSkyBlue" Text="Customer Name" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text5" Left="113.4" Width="94.5" Height="28.35" Fill.Color="LightSkyBlue" Text="DateOfCall" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text7" Left="207.9" Width="226.8" Height="28.35" Fill.Color="LightSkyBlue" Text="TimeOfCall" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text9" Left="321.3" Width="141.75" Height="28.35" Fill.Color="LightSkyBlue" Text="Subject" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text11" Left="463.05" Width="255.15" Height="28.35" Fill.Color="LightSkyBlue" Text="Description" Font="Arial, 10pt, style=Bold" Style="Header"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="74.15" Width="718.2" Height="160.65" EvenStyle="EvenRows" DataSource="CustomerCall">
+      <TextObject Name="Text4" Left="113.4" Width="94.5" Height="103.95" Text="[CustomerCall.DateOfCall]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text6" Left="207.9" Width="113.4" Height="103.95" Text="[CustomerCall.TimeOfCall]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text8" Left="321.3" Width="141.75" Height="103.95" Text="[CustomerCall.Subject]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text10" Left="463.05" Width="255.15" Height="132.3" Text="[CustomerCall.Description]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text13" Width="113.4" Height="103.95" Text="[CustomerName]" Font="Arial, 10pt"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="238.8" Width="718.2" Height="18.9">
+      <TextObject Name="Text12" Width="718.2" Height="18.9" Dock="Fill" Fill.Color="LightSkyBlue" Text="[PageN]" HorzAlign="Right" Font="Arial, 10pt" Style="Footer"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

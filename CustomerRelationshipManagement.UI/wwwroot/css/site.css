@@ -1,0 +1,178 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+/*@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}*/
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+img {
+    width: 100%;
+}
+
+.bg-cover {
+    background-position: center !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #ffa500;
+    border-color: #1861ac;
+}
+.navbar {
+    background-color: #ffa500;
+    color:#fff;
+}
+.text-dark{
+    /*color: #ffa500 !important;*/
+    font-weight:400;
+}
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+    color: #ffa500 !important;
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+
+/*LOGOUT BTN*/
+#logout{
+    background-color: #ffa500;
+    font-weight: 400;
+    border-color: #ffa500;
+}
+#logout:hover,
+#logout:focus{
+    background-color:#d68d04de;
+    box-shadow:none;
+    border-color:#d68d04de;
+}
+/*BTN*/
+.btn {
+    padding: 6px 24px;
+    font-weight: 500;
+}
+.btn-brand {
+    background-color: #ffa500 !important;
+}
+.btn-brand:hover{
+    color: #ffffff;
+    background-color: #d68d04de !important;
+}
+
+/*SLIDER*/
+#hero-slider h1 {
+    font-weight: 700 !important;
+}
+
+.slide1 {
+    background: linear-gradient(rgb(9, 32, 50,0.3),rgb(9, 33, 52,0.4)), url(../img/backgroung.jpg);
+}
+
+.slide2 {
+    background: linear-gradient(rgb(9, 32, 50,0.3),rgb(9, 33, 52,0.4)), url(../img/backgroung.jpg);
+}
+/*OWL CAROUSEL*/
+.owl-prev,
+.owl-next {
+    position: absolute;
+    top: 50%;
+    width: 60px !important;
+    height: 60px !important;
+    display: grid;
+    place-items: center;
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    margin-top: -30px !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    font-size: 12px !important;
+    border-radius: 100% !important;
+}
+
+.owl-prev {
+    left: 0 !important;
+}
+
+.owl-next {
+    right: 0 !important;
+}
+
+#hero-slider .owl-next:hover,
+#hero-slider .owl-prev:hover {
+    background-color: #ffa500 !important;
+    border-color: #ffa500 !important;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+    padding-top: 10px;
+    color: #ffffff;
+    text-align: center;
+    background: linear-gradient(rgb(9, 32, 50,0.8),rgb(9, 33, 52,0.8));
+}
+
+    .footer p {
+        color: #fff;
+        font-weight: 300;
+        padding: 0;
+        margin: 0;
+    }
+
+
